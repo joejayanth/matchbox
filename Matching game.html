@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+
+<!--Matching game -->
+<!-- Logic: 
+1. create 24 boxes in a page. 
+2. there will be 24 cards, 12 pairs.
+3. allot each card to a slot randomly. 
+4. on click of a card, open the card. and record that card in a array. 
+5. on click on the next card, open that card, if its a match to the previous card, then leave them both open. if it is not a match then close the first card. leave the second open. 
+6. have timer, start at the first card open. stop at the last card match.  -->
+
+
+<html>
+<head>
+	<title>Matching game by joseph jayanth</title>
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+	<script type="text/javascript">
+
+//create an array called all_cards for all the images.
+		var all_cards = ['image1.jpg','image2.jpg','image3.jpg','image4.jpg','image5.jpg','image6.jpg','image1.jpg','image2.jpg','image3.jpg','image4.jpg','image5.jpg','image6.jpg']
+
+		//,'image7.jpg','image8.jpg','image9.jpg','image10.jpg'
+
+		//,'image6.jpg','image7.jpg','image8.jpg','image9.jpg','image10.jpg'
+
+//create an array called cards and assign these images randomly from all_cards[] to cards[]
+		var cards = [ ]; // created array called cards
+		while (all_cards.length>0){	//random assignement
+			var length_of_all_cards = all_cards.length;
+			var random_pick = (Math.floor((Math.random() * length_of_all_cards) + 1));
+			//console.log(all_cards.length + "," + random_pick);
+			cards.push(all_cards[random_pick-1]);
+			all_cards.splice(random_pick-1,1);
+		}
+			//console.log(cards);
+			// console.log(all_cards);
+
+// sidenote: closed image is munia2
+	var last_opened_image = []; //for storing last opened image. 
+	var last_opened_id = ['test']; //for storing last opened id.
+	var identified_id =[]; // for storing identified IDs.
+	var clicks=1;
+	var clicked_ID = []; //to ensure that two consecutive clicks in the same id are not counted
+
+	function myFunction1(y) {
+
+		if(y != last_opened_id[last_opened_id.length-1])
+		{
+		document.getElementById("clicks").innerHTML = clicks++;
+		var x = document.getElementById(y).src;
+		if (x ==='file:///Users/josephjayanth/Documents/javascript%20learning/matching-game/munia2.jpg')
+			{
+				document.getElementById(y).src = cards[y];
+			}
+
+//finding the last opened before this one and closing it. 
+			
+			last_opened_image.push(cards[y]);
+			last_opened_id.push(y);
+			var m = last_opened_id [last_opened_id.length - 2];
+			var last_opened_len = last_opened_image.length;
+			var z = last_opened_image[last_opened_len-2];
+//console.log('', z,'and', cards[y], 'and clicked id is:', y, 'and the image of that is:', cards[y]);
+
+//if the current clicked card is same as the last clicked card AND last opened in more than 1 because i dont want this rule to apply on the first card. AND if the previous id M is not part of the identified lists then do);
+			if(cards[y] != z && last_opened_len > 1 && identified_id.indexOf(m) == -1 ) {
+				document.getElementById(m).src = "munia2.jpg";
+			}
+			else if(cards[y] == z && last_opened_len > 1){
+				identified_id.push(y);
+				identified_id.push(m);
+			}
+
+//console.log(y, m, 'and identified ID:', identified_id);
+			
+			if (identified_id.length==12){
+
+				k= clicks - 1;
+				window.alert ('You took '+ k +' clicks to finish it. Refresh the page and try again. :)');
+			}
+			}	
+			
+		}
+
+		
+	
+</script>
+</head>
+
+<body>
+
+<div class="w3-container">
+  <h2>Find the matching pair</h2>
+  <p> No. of clicks:<span id='clicks'> 0 </p>
+
+
+	<!-- 
+<button onclick="document.getElementById('myImage').src='pic_bulbon.gif'">Turn on the light</button>
+
+<img id="myImage" src="pic_bulboff.gif" style="width:100px">
+
+<button onclick="document.getElementById('myImage').src='pic_bulboff.gif'">Turn off the light</button>
+-->
+
+<div class=' w3-card w3-round-xlarge ' style='width: 15%; height:250px; float: left;margin: 10px; '> <div onclick="myFunction1('0')"> <img id='0' src='munia2.jpg' height='250px'; width='100%' ; > </div></div>
+
+<div class=' w3-card w3-round-xlarge ' style='width: 15%; height:250px; float: left;margin: 10px; '> <div onclick="myFunction1('1')"> <img id='1' src='munia2.jpg' height='250px'; width='100%' ;> </div></div>
+
+<div class=' w3-card w3-round-xlarge ' style='width: 15%; height:250px; float: left;margin: 10px; '> <div onclick="myFunction1('2')"> <img id='2' src='munia2.jpg' height='250px'; width='100%' ;> </div></div>
+
+<div class=' w3-card w3-round-xlarge ' style='width: 15%; height:250px; float: left;margin: 10px; '> <div onclick="myFunction1('3')"> <img id='3' src='munia2.jpg' height='250px'; width='100%' ;> </div></div>
+
+<div class=' w3-card w3-round-xlarge ' style='width: 15%; height:250px; float: left;margin: 10px; '> <div onclick="myFunction1('4')"> <img id='4' src='munia2.jpg' height='250px'; width='100%' ;> </div></div>
+
+<div class=' w3-card w3-round-xlarge ' style='width: 15%; height:250px; float: left;margin: 10px; '> <div onclick="myFunction1('5')"> <img id='5' src='munia2.jpg' height='250px'; width='100%' ;> </div></div>
+
+<div class=' w3-card w3-round-xlarge ' style='width: 15%; height:250px; float: left;margin: 10px; '> <div onclick="myFunction1('6')"> <img id='6' src='munia2.jpg' height='250px'; width='100%' ;> </div></div>
+
+<div class=' w3-card w3-round-xlarge ' style='width: 15%; height:250px; float: left;margin: 10px; '> <div onclick="myFunction1('7')"> <img id='7' src='munia2.jpg' height='250px'; width='100%' ;> </div></div>
+
+<div class=' w3-card w3-round-xlarge ' style='width: 15%; height:250px; float: left;margin: 10px; '> <div onclick="myFunction1('8')"> <img id='8' src='munia2.jpg' height='250px'; width='100%' ;> </div></div>
+
+<div class=' w3-card w3-round-xlarge ' style='width: 15%; height:250px; float: left;margin: 10px; '> <div onclick="myFunction1('9')"> <img id='9' src='munia2.jpg' height='250px'; width='100%' ;> </div></div>
+
+<div class=' w3-card w3-round-xlarge ' style='width: 15%; height:250px; float: left;margin: 10px; '> <div onclick="myFunction1('10')"> <img id='10' src='munia2.jpg' height='250px'; width='100%' ;> </div></div>
+
+<div class=' w3-card w3-round-xlarge ' style='width: 15%; height:250px; float: left;margin: 10px; '> <div onclick="myFunction1('11')"> <img id='11' src='munia2.jpg' height='250px'; width='100%' ;> </div></div>
+<!-- 
+<div class=' w3-card w3-round-xlarge ' style='width: 15%; height:250px; float: left;margin: 10px; '> <div onclick="myFunction1('12')"> <img id='12' src='munia2.jpg' height='250px'; width='100%' ;> </div></div>
+
+<div class=' w3-card w3-round-xlarge ' style='width: 15%; height:250px; float: left;margin: 10px; '> <div onclick="myFunction1('13')"> <img id='13' src='munia2.jpg' height='250px'; width='100%' ;> </div></div> --><!-- 
+
+<div class=' w3-card w3-round-xlarge ' style='width: 15%; height:250px; float: left;margin: 10px; '> <div onclick="myFunction1('14')"> <img id='14' src='munia2.jpg' height='250px'; width='100%' ;> </div></div>
+
+<div class=' w3-card w3-round-xlarge ' style='width: 15%; height:250px; float: left;margin: 10px; '> <div onclick="myFunction1('15')"> <img id='15' src='munia2.jpg' height='250px'; width='100%' ;> </div></div>
+
+<div class=' w3-card w3-round-xlarge ' style='width: 15%; height:250px; float: left;margin: 10px; '> <div onclick="myFunction1('16')"> <img id='16' src='munia2.jpg' height='250px'; width='100%' ;> </div></div>
+
+<div class=' w3-card w3-round-xlarge ' style='width: 15%; height:250px; float: left;margin: 10px; '> <div onclick="myFunction1('17')"> <img id='17' src='munia2.jpg' height='250px'; width='100%' ;> </div></div>
+
+<div class=' w3-card w3-round-xlarge ' style='width: 15%; height:250px; float: left;margin: 10px; '> <div onclick="myFunction1('18')"> <img id='18' src='munia2.jpg' height='250px'; width='100%' ;> </div></div>
+
+<div class=' w3-card w3-round-xlarge ' style='width: 15%; height:250px; float: left;margin: 10px; '> <div onclick="myFunction1('19')"> <img id='19' src='munia2.jpg' height='250px'; width='100%' ;> </div></div> --><!-- 
+
+<div class=' w3-card w3-round-xlarge ' style='width: 15%; height:250px; float: left;margin: 10px; '> <div onclick="myFunction1('20')"> <img id='20' src='munia2.jpg' height='250px'; width='100%' ;> </div></div>
+ -->
+
+<!-- 
+<div class=' w3-card w3-round-xlarge ' style='width: 15%; height:250px; float: left;margin: 10px; '> <div onclick="myFunction1('21')"> <img id='21' src='munia2.jpg' height='250px'; width='100%' ;> </div></div>
+
+<div class=' w3-card w3-round-xlarge ' style='width: 15%; height:250px; float: left;margin: 10px; '> <div onclick="myFunction1('22')"> <img id='22' src='munia2.jpg' height='250px'; width='100%' ;> </div></div>
+
+<div class=' w3-card w3-round-xlarge ' style='width: 15%; height:250px; float: left;margin: 10px; '> <div onclick="myFunction1('23')"> <img id='23' src='munia2.jpg' height='250px'; width='100%' ;> </div></div>
+
+<div class=' w3-card w3-round-xlarge ' style='width: 15%; height:250px; float: left;margin: 10px; '> <div onclick="myFunction1('24')"> <img id='24' src='munia2.jpg' height='250px'; width='100%' ;> </div></div>
+
+  --> 
+
+
+</div>
+
+
+</body>
+</html>
