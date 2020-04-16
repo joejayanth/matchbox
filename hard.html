@@ -30,7 +30,7 @@
 //create an array called all_cards for all the images.
 		// var all_cards = ['image1.jpg','image2.jpg','image3.jpg','image4.jpg','image5.jpg','image6.jpg','image1.jpg','image2.jpg','image3.jpg','image4.jpg','image5.jpg','image6.jpg'];
 
-		var all_cards = ['A.jpg','B.jpg','H.jpg','J.jpg','K.jpg','Y.jpg','A.jpg','B.jpg','H.jpg','J.jpg','K.jpg','Y.jpg','O.jpg','N.jpg','T.jpg','O.jpg','N.jpg','T.jpg'];
+		var all_cards = ['A.jpg','B.jpg','H.jpg','J.jpg','K.jpg','Y.jpg','A.jpg','B.jpg','H.jpg','J.jpg','K.jpg','Y.jpg','O.jpg','N.jpg','T.jpg','O.jpg','N.jpg','T.jpg','D.jpg','E.jpg','F.jpg','G.jpg','I.jpg','P.jpg','R.jpg','D.jpg','E.jpg','F.jpg','G.jpg','I.jpg','P.jpg','R.jpg'];
 
 
 // to preload images to increase speed after the game starts. 	
@@ -46,7 +46,7 @@
 		//     'image1.jpg','image2.jpg','image3.jpg','image4.jpg','image5.jpg','image6.jpg'
 		// );	
 
-		preload('A.jpg','B.jpg','H.jpg','J.jpg','K.jpg','Y.jpg', 'O.jpg','N.jpg','T.jpg','back.jpg');
+		preload('A.jpg','B.jpg','H.jpg','J.jpg','K.jpg','Y.jpg', 'O.jpg','N.jpg','T.jpg','back.jpg','D.jpg','E.jpg','F.jpg','G.jpg','I.jpg','P.jpg','R.jpg');
 
 
 		//console.log(images);
@@ -80,7 +80,7 @@
 		{
 		document.getElementById("clicks").innerHTML = clicks++;
 		var x = document.getElementById(y).src;
-		if (x ==='file:///Users/josephjayanth/Documents/GitHub/matching-game/back.jpg')
+		if (x ==='https://josephjayanth.com/MatchBox/back.jpg')
 			{
 				document.getElementById(y).src = cards[y];
 			}
@@ -105,10 +105,10 @@
 
 //console.log(y, m, 'and identified ID:', identified_id);
 			
-			if (identified_id.length==18){
+			if (identified_id.length==32){
 
 				k= clicks - 1;
-				window.alert ('You took '+ k +' clicks to finish it. If you did it in <28 clicks, tweet the screenshot to @joejayanth :)');
+				window.alert ('You took '+ k +' clicks to finish it. If you did it in <50 clicks, you are a rockstar. Tweet the screenshot to @joejayanth :)');
 			}
 			}	
 			
@@ -181,20 +181,21 @@
 <div class=' w3-card w3-round-xlarge ' style='width: 10%;  float: left;margin: 10px; '> <div onclick="myFunction1('16')"> <img style="border-radius: 15px; border-width: 10px; border-color: white; border-style: solid;"id='16' src='back.jpg' width='100%' ;> </div></div>
 
 <div class=' w3-card w3-round-xlarge ' style='width: 10%;  float: left;margin: 10px; '> <div onclick="myFunction1('17')"> <img style="border-radius: 15px; border-width: 10px; border-color: white; border-style: solid;"id='17' src='back.jpg' width='100%' ;> </div></div>
-<div class=' w3-card w3-round-xlarge ' style='width: 10%;  float: left;margin: 10px; '> <div onclick="myFunction1('17')"> <img style="border-radius: 15px; border-width: 10px; border-color: white; border-style: solid;"id='17' src='back.jpg' width='100%' ;> </div></div>
-<div class=' w3-card w3-round-xlarge ' style='width: 10%;  float: left;margin: 10px; '> <div onclick="myFunction1('17')"> <img style="border-radius: 15px; border-width: 10px; border-color: white; border-style: solid;"id='17' src='back.jpg' width='100%' ;> </div></div>
-<div class=' w3-card w3-round-xlarge ' style='width: 10%;  float: left;margin: 10px; '> <div onclick="myFunction1('17')"> <img style="border-radius: 15px; border-width: 10px; border-color: white; border-style: solid;"id='17' src='back.jpg' width='100%' ;> </div></div>
-<div class=' w3-card w3-round-xlarge ' style='width: 10%;  float: left;margin: 10px; '> <div onclick="myFunction1('17')"> <img style="border-radius: 15px; border-width: 10px; border-color: white; border-style: solid;"id='17' src='back.jpg' width='100%' ;> </div></div>
-<div class=' w3-card w3-round-xlarge ' style='width: 10%;  float: left;margin: 10px; '> <div onclick="myFunction1('17')"> <img style="border-radius: 15px; border-width: 10px; border-color: white; border-style: solid;"id='17' src='back.jpg' width='100%' ;> </div></div>
-<div class=' w3-card w3-round-xlarge ' style='width: 10%;  float: left;margin: 10px; '> <div onclick="myFunction1('17')"> <img style="border-radius: 15px; border-width: 10px; border-color: white; border-style: solid;"id='17' src='back.jpg' width='100%' ;> </div></div>
-<div class=' w3-card w3-round-xlarge ' style='width: 10%;  float: left;margin: 10px; '> <div onclick="myFunction1('17')"> <img style="border-radius: 15px; border-width: 10px; border-color: white; border-style: solid;"id='17' src='back.jpg' width='100%' ;> </div></div>
-<div class=' w3-card w3-round-xlarge ' style='width: 10%;  float: left;margin: 10px; '> <div onclick="myFunction1('17')"> <img style="border-radius: 15px; border-width: 10px; border-color: white; border-style: solid;"id='17' src='back.jpg' width='100%' ;> </div></div>
-<div class=' w3-card w3-round-xlarge ' style='width: 10%;  float: left;margin: 10px; '> <div onclick="myFunction1('17')"> <img style="border-radius: 15px; border-width: 10px; border-color: white; border-style: solid;"id='17' src='back.jpg' width='100%' ;> </div></div>
-<div class=' w3-card w3-round-xlarge ' style='width: 10%;  float: left;margin: 10px; '> <div onclick="myFunction1('17')"> <img style="border-radius: 15px; border-width: 10px; border-color: white; border-style: solid;"id='17' src='back.jpg' width='100%' ;> </div></div>
-<div class=' w3-card w3-round-xlarge ' style='width: 10%;  float: left;margin: 10px; '> <div onclick="myFunction1('17')"> <img style="border-radius: 15px; border-width: 10px; border-color: white; border-style: solid;"id='17' src='back.jpg' width='100%' ;> </div></div>
-<div class=' w3-card w3-round-xlarge ' style='width: 10%;  float: left;margin: 10px; '> <div onclick="myFunction1('17')"> <img style="border-radius: 15px; border-width: 10px; border-color: white; border-style: solid;"id='17' src='back.jpg' width='100%' ;> </div></div>
-<div class=' w3-card w3-round-xlarge ' style='width: 10%;  float: left;margin: 10px; '> <div onclick="myFunction1('17')"> <img style="border-radius: 15px; border-width: 10px; border-color: white; border-style: solid;"id='17' src='back.jpg' width='100%' ;> </div></div>
-<div class=' w3-card w3-round-xlarge ' style='width: 10%;  float: left;margin: 10px; '> <div onclick="myFunction1('17')"> <img style="border-radius: 15px; border-width: 10px; border-color: white; border-style: solid;"id='17' src='back.jpg' width='100%' ;> </div></div>
+
+<div class=' w3-card w3-round-xlarge ' style='width: 10%;  float: left;margin: 10px; '> <div onclick="myFunction1('18')"> <img style="border-radius: 15px; border-width: 10px; border-color: white; border-style: solid;"id='18' src='back.jpg' width='100%' ;> </div></div>
+<div class=' w3-card w3-round-xlarge ' style='width: 10%;  float: left;margin: 10px; '> <div onclick="myFunction1('19')"> <img style="border-radius: 15px; border-width: 10px; border-color: white; border-style: solid;"id='19' src='back.jpg' width='100%' ;> </div></div>
+<div class=' w3-card w3-round-xlarge ' style='width: 10%;  float: left;margin: 10px; '> <div onclick="myFunction1('20')"> <img style="border-radius: 15px; border-width: 10px; border-color: white; border-style: solid;"id='20' src='back.jpg' width='100%' ;> </div></div>
+<div class=' w3-card w3-round-xlarge ' style='width: 10%;  float: left;margin: 10px; '> <div onclick="myFunction1('21')"> <img style="border-radius: 15px; border-width: 10px; border-color: white; border-style: solid;"id='21' src='back.jpg' width='100%' ;> </div></div>
+<div class=' w3-card w3-round-xlarge ' style='width: 10%;  float: left;margin: 10px; '> <div onclick="myFunction1('22')"> <img style="border-radius: 15px; border-width: 10px; border-color: white; border-style: solid;"id='22' src='back.jpg' width='100%' ;> </div></div>
+<div class=' w3-card w3-round-xlarge ' style='width: 10%;  float: left;margin: 10px; '> <div onclick="myFunction1('23')"> <img style="border-radius: 15px; border-width: 10px; border-color: white; border-style: solid;"id='23' src='back.jpg' width='100%' ;> </div></div>
+<div class=' w3-card w3-round-xlarge ' style='width: 10%;  float: left;margin: 10px; '> <div onclick="myFunction1('24')"> <img style="border-radius: 15px; border-width: 10px; border-color: white; border-style: solid;"id='24' src='back.jpg' width='100%' ;> </div></div>
+<div class=' w3-card w3-round-xlarge ' style='width: 10%;  float: left;margin: 10px; '> <div onclick="myFunction1('25')"> <img style="border-radius: 15px; border-width: 10px; border-color: white; border-style: solid;"id='25' src='back.jpg' width='100%' ;> </div></div>
+<div class=' w3-card w3-round-xlarge ' style='width: 10%;  float: left;margin: 10px; '> <div onclick="myFunction1('26')"> <img style="border-radius: 15px; border-width: 10px; border-color: white; border-style: solid;"id='26' src='back.jpg' width='100%' ;> </div></div>
+<div class=' w3-card w3-round-xlarge ' style='width: 10%;  float: left;margin: 10px; '> <div onclick="myFunction1('27')"> <img style="border-radius: 15px; border-width: 10px; border-color: white; border-style: solid;"id='27' src='back.jpg' width='100%' ;> </div></div>
+<div class=' w3-card w3-round-xlarge ' style='width: 10%;  float: left;margin: 10px; '> <div onclick="myFunction1('28')"> <img style="border-radius: 15px; border-width: 10px; border-color: white; border-style: solid;"id='28' src='back.jpg' width='100%' ;> </div></div>
+<div class=' w3-card w3-round-xlarge ' style='width: 10%;  float: left;margin: 10px; '> <div onclick="myFunction1('29')"> <img style="border-radius: 15px; border-width: 10px; border-color: white; border-style: solid;"id='29' src='back.jpg' width='100%' ;> </div></div>
+<div class=' w3-card w3-round-xlarge ' style='width: 10%;  float: left;margin: 10px; '> <div onclick="myFunction1('30')"> <img style="border-radius: 15px; border-width: 10px; border-color: white; border-style: solid;"id='30' src='back.jpg' width='100%' ;> </div></div>
+<div class=' w3-card w3-round-xlarge ' style='width: 10%;  float: left;margin: 10px; '> <div onclick="myFunction1('31')"> <img style="border-radius: 15px; border-width: 10px; border-color: white; border-style: solid;"id='31' src='back.jpg' width='100%' ;> </div></div>
 
 <!-- 
 
