@@ -141,7 +141,7 @@ var x = setInterval(function() {
   // If the count down is over, write some text 
   if (distance < 0) {
     clearInterval(x);
-    document.getElementById("clicks").innerHTML = "EXPIRED";
+    document.getElementById("clicks").innerHTML = "Time's up!";
     window.alert('You ran out of time. Better luck next time.')
   }
 }, 1000);
@@ -161,7 +161,7 @@ var x = setInterval(function() {
 	Developed by <a href="http://twitter.com/joejayanth/" target="_blank">@joejayanth</a> | 
   	Illustrations by <a href="http://instagram.com/lettermelon/" target="_blank">Angie</a></p></div>
 
-  	<div style="float:left;font-family: Crimson Pro; font-size: 1.25em; width: 45%; height: 100px; text-align: right;"><p>Time: <span id='clicks' style="color: red">0 </span> | <button onclick="location.reload();"> Start again! </button></p><br> </div>	
+  	<div style="float:left;font-family: Crimson Pro; font-size: 1.25em; width: 45%; height: 100px; text-align: right;"><p>Time: <span id='clicks' style="color: red">50 </span> | <button onclick="location.reload();"> Start again! </button></p><br> </div>	
 
   <!-- <div style="line-height:1.5; margin: 10px;clear: right;"><h3 style="font-family: 'playfair display'">MatchBox - a memory game by <a href="http://twitter.com/joejayanth/" target="_blank">@joejayanth</a></h3>
   	  <p> No. of clicks: <span id='clicks'>0 </span> | <button onclick="location.reload();"> Start again! </button></p> <p>Illustrations by  <a href="https://www.instagram.com/lettermelon/" target='_blank'> @lettermelon</a></p></div> -->
